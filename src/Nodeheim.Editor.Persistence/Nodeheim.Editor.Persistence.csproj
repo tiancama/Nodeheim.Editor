@@ -2,7 +2,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Nodeheim.Editor.Domain\Nodeheim.Editor.Domain.csproj" />
-    <ProjectReference Include="..\Nodeheim.Persistence.Documents\Nodeheim.Persistence.Documents.csproj" />
+    <ProjectReference Include="$(EngineRoot)Nodeheim.Persistence.Documents\Nodeheim.Persistence.Documents.csproj" />
   </ItemGroup>
 
   <PropertyGroup>

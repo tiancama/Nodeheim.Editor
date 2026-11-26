@@ -6,9 +6,9 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Nodeheim.Domain\Nodeheim.Domain.csproj" />
-    <ProjectReference Include="..\Nodeheim.Issues\Nodeheim.Issues.csproj" />
-    <ProjectReference Include="..\Nodeheim.Persistence\Nodeheim.Persistence.csproj" />
+    <ProjectReference Include="$(EngineRoot)Nodeheim.Domain\Nodeheim.Domain.csproj" />
+    <ProjectReference Include="$(EngineRoot)Nodeheim.Issues\Nodeheim.Issues.csproj" />
+    <ProjectReference Include="$(EngineRoot)Nodeheim.Persistence\Nodeheim.Persistence.csproj" />
     <ProjectReference Include="..\Nodeheim.Editor.Domain\Nodeheim.Editor.Domain.csproj" />
   </ItemGroup>
 </Project>

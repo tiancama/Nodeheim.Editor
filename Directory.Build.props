@@ -1,0 +1,7 @@
+<Project>
+
+  <PropertyGroup>
+    <EngineRoot>$(MSBuildThisFileDirectory)..\Nodeheim\src\</EngineRoot>
+  </PropertyGroup>
+
+</Project>
