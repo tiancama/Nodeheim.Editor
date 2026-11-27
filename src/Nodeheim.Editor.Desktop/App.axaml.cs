@@ -5,6 +5,7 @@ using Nodeheim.Editor.Persistence;
 using Nodeheim.Persistence;
 using Nodeheim.Persistence.Files;
 using Nodeheim.Persistence.Documents;
+using Nodeheim.Persistence.Documents.Adapters;
 using Nodeheim.Persistence.Json;
 using Nodeheim.Persistence.Xml;
 
