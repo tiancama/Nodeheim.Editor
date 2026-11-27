@@ -26,7 +26,7 @@ Nodeheim.Editor/
 
 Prerequisites: the [.NET 10 SDK](https://dotnet.microsoft.com/download).
 
-The editor references the engine projects directly. Clone both repositories into the same parent folder:
+The editor references the engine projects directly. Both repositories are developed together; clone the latest `main` of each into the same parent folder:
 
 ```bash
 git clone https://github.com/tiancama/Nodeheim.git
@@ -60,18 +60,18 @@ Clicking a connection selects both of its endpoints; dragging it moves both.
 ## Tech stack
 
 - **Language / runtime:** C# 14 on .NET 10 (LTS)
-- **UI:** Avalonia (MVVM), cross-platform
+- **UI:** Avalonia (MVVM); Windows, other platforms untested
 - **Engine:** Nodeheim, referenced as source projects
 
 ## Status
 
-Early development. The editor supports creating, selecting, moving, connecting, disconnecting, and deleting nodes. Documents can be loaded and saved as JSON and XML, including node positions. The API is expected to change.
+Early development. Basic graph editing; documents load and save as JSON and XML. Features and file format are expected to change.
 
 This is primarily a personal learning project; issues and feedback are welcome.
 
 ## How this project is built
 
-The Nodeheim Editor is developed through AI pair programming. AI is a tool here, not the author: I set the direction, make the design decisions, and review every change that goes into the code, whether I typed it or an assistant suggested it.
+The Nodeheim Editor is developed with agentic engineering: AI coding agents implement planned changes commit by commit. I set the direction, make the design decisions, and review and test every change before it is merged.
 
 ## License
 
