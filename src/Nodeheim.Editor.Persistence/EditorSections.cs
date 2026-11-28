@@ -9,9 +9,9 @@ namespace Nodeheim.Editor.Persistence;
 public static class EditorSections
 {
     /// <summary>
-    /// Gets the description of the owner <c>editor</c>.
+    /// Gets the name of the owner <c>editor</c>.
     /// </summary>
-    public static OwnerDescriptor Owner { get; } = new("editor", "Editor");
+    public const string Owner = "editor";
 
     /// <summary>
     /// Gets the section mapper of <c>editor.surface</c>.

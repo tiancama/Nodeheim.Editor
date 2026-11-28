@@ -40,7 +40,7 @@ public partial class MainWindow : Window
         }
     }
 
-    private static List<FilePickerFileType> CreateFileTypeFilters(IReadOnlyList<DocumentStorageDescriptor> descriptors)
+    private static List<FilePickerFileType> CreateFileTypeFilters(IReadOnlyList<DocumentFormatDescriptor> descriptors)
     {
         List<FilePickerFileType> filters =
         [
@@ -51,12 +51,12 @@ public partial class MainWindow : Window
             }
         ];
 
-        foreach (DocumentStorageDescriptor descriptor in descriptors)
+        foreach (DocumentFormatDescriptor descriptor in descriptors)
         {
             if (descriptor.FileExtensions.Count == 0)
                 continue;
 
-            filters.Add(new FilePickerFileType(descriptor.DisplayName)
+            filters.Add(new FilePickerFileType(descriptor.Name)
             {
                 Patterns = descriptor.FileExtensions.Select(e => "*" + e).ToList()
             });
@@ -66,10 +66,10 @@ public partial class MainWindow : Window
         return filters;
     }
 
-    private static List<FilePickerFileType> CreateSaveFileTypes(IReadOnlyList<DocumentStorageDescriptor> descriptors) =>
+    private static List<FilePickerFileType> CreateSaveFileTypes(IReadOnlyList<DocumentFormatDescriptor> descriptors) =>
         descriptors
             .Where(descriptor => descriptor.FileExtensions.Count > 0)
-            .Select(descriptor => new FilePickerFileType(descriptor.DisplayName)
+            .Select(descriptor => new FilePickerFileType(descriptor.Name)
             {
                 Patterns = descriptor.FileExtensions.Select(e => "*" + e).ToList()
             })
@@ -111,7 +111,7 @@ public partial class MainWindow : Window
         {
             Title = "Open",
             AllowMultiple = false,
-            FileTypeFilter = CreateFileTypeFilters(Shell.StorageDescriptors),
+            FileTypeFilter = CreateFileTypeFilters(Shell.Formats),
         });
 
         if (files is not [{ } file] || file.TryGetLocalPath() is not { } path)
@@ -132,7 +132,7 @@ public partial class MainWindow : Window
         {
             Title = "Save As",
             DefaultExtension = ".json",
-            FileTypeChoices = CreateSaveFileTypes(Shell.StorageDescriptors),
+            FileTypeChoices = CreateSaveFileTypes(Shell.Formats),
             ShowOverwritePrompt = true,
         });
 

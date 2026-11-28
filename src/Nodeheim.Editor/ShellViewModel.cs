@@ -31,7 +31,7 @@ public class ShellViewModel : INotifyPropertyChanged
     /// </summary>
     public DocumentViewModel ActiveDocument { get; private set => SetProperty(ref field, value); }
 
-    public IReadOnlyList<DocumentStorageDescriptor> StorageDescriptors => _documentRepository.StorageDescriptors;
+    public IReadOnlyList<DocumentFormatDescriptor> Formats => _documentRepository.Formats;
 
     [MemberNotNull(nameof(ActiveDocument))]
     public void Open(LoadedDocument document) => ActiveDocument = new(document);
