@@ -12,18 +12,13 @@ public class DocumentViewModel
     /// <summary>
     /// Initializes a new instance of the <see cref="DocumentViewModel"/> class.
     /// </summary>
-    /// <param name="document">
-    /// The document to edit; if it holds no graph or no surface, an empty one is added to it. // geändert
-    /// </param>
+    /// <param name="document">The document to edit.</param>
     public DocumentViewModel(LoadedDocument document)
     {
         LoadedDocument = document;
 
-        Graph = document.Models.Get<Graph>() ?? new Graph();
-        document.Models.Set(Graph);
-
-        Surface = document.Models.Get<Surface>() ?? new Surface();
-        document.Models.Set(Surface);
+        Graph = document.Get<Graph>();
+        Surface = document.Get<Surface>();
         ReconcileSurface();
 
         SurfaceViewModel = new(Graph, Surface);

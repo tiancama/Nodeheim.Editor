@@ -40,7 +40,7 @@ public class ShellViewModel : INotifyPropertyChanged
     /// Replaces the active document with a new, empty document.
     /// </summary>
     [MemberNotNull(nameof(ActiveDocument))]
-    public void New() => Open(new LoadedDocument());
+    public void New() => Open(_documentRepository.Create());
 
     /// <summary>
     /// Loads the document at the specified location and opens it as the active document.
