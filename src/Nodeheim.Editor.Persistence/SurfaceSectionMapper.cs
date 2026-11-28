@@ -18,7 +18,7 @@ internal sealed class SurfaceSectionMapper : ISectionMapper<Surface>
     private const string YName = "y";
     private const string RadiusName = "radius";
 
-    public SectionTypeDescriptor SectionType { get; } = new("editor.surface", "Surface");
+    public SectionTypeDescriptor SectionType { get; } = new("editor.surface");
 
     public Surface? Read(DocumentSection? section, IIssueCollector issues)
     {
